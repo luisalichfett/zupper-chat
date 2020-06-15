@@ -11,11 +11,11 @@ export const AnimatedBackground = () => {
     Animated.loop(
       Animated.sequence([
         Animated.timing(scrollX, {
-          toValue: -1340,
+          toValue: -1040,
           duration: 10000,
         }),
         Animated.timing(scrollX, {
-          toValue: 1340,
+          toValue: 665,
           duration: 20000,
         }),
         Animated.timing(scrollX, {
