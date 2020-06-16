@@ -8,17 +8,17 @@ interface Props {
   handleOnPress: (event: any) => void;
   height?: number;
   width?: number;
-  marginOpacity?: number;
   marginTop: number;
+  isDisabled?: boolean;
 }
 
 export const DefaultButton = ({
   text,
   height = 60,
   width = 250,
-  marginOpacity = -60,
   marginTop,
   handleOnPress,
+  isDisabled = false,
 }: Props) => {
   return (
     <View style={{ ...style.container, top: marginTop }}>
@@ -34,13 +34,23 @@ export const DefaultButton = ({
           ...style.default,
           width: width,
           height: height,
-          marginTop: marginOpacity,
+          marginTop: -height,
         }}
       >
         <TouchableOpacity onPress={handleOnPress}>
           <Text style={style.text}>{text}</Text>
         </TouchableOpacity>
       </View>
+      {isDisabled && (
+        <View
+          style={{
+            ...style.disabled,
+            width: width,
+            height: height,
+            marginTop: -height
+          }}
+        />
+      )}
     </View>
   );
 };

@@ -8,6 +8,13 @@ export const style = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  disabled: {
+    backgroundColor: "rgb(104, 110, 120)",
+    borderRadius: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    opacity: 0.7,
+  },
   default: {
     borderWidth: 2,
     borderColor: "#fff",
@@ -16,10 +23,6 @@ export const style = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  text: {
-    fontSize: 30,
-    color: "#fff",
-  },
   buttonOpacity: {
     backgroundColor: "#fff",
     borderRadius: 50,
@@ -27,6 +30,10 @@ export const style = StyleSheet.create({
     justifyContent: "center",
     opacity: 0.5,
     zIndex: -1,
+  },
+  text: {
+    fontSize: 30,
+    color: "#fff",
   },
 });
 

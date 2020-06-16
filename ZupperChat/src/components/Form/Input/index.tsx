@@ -3,28 +3,28 @@ import { TextInput, View } from "react-native";
 import { style } from "./styled";
 
 interface Props {
-  handleInput: (event: string) => void;
-  handleInputFocus?: (event: any) => void;
   marginTop: number;
   placeHolder?: string;
   placeholderTextColor?: string;
+  handleTextInput: (event: string) => void;
+  handleTextInputSubmit?: (event: any) => void;
 }
 
 export const Input = ({
-  handleInput,
-  handleInputFocus,
   marginTop,
   placeHolder,
   placeholderTextColor,
+  handleTextInput,
+  handleTextInputSubmit
 }: Props) => {
   return (
     <View style={{ ...style.inputBox, marginTop: marginTop }}>
       <TextInput
+        onChangeText={handleTextInput}
         placeholderTextColor={placeholderTextColor}
         placeholder={placeHolder}
         style={style.input}
-        onChangeText={handleInput}
-        onFocus={handleInputFocus}
+        onSubmitEditing={handleTextInputSubmit}
       />
     </View>
   );

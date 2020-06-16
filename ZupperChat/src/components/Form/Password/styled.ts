@@ -9,6 +9,7 @@ export const style = StyleSheet.create({
     width: 250,
     height: 40,
     alignItems: "center",
+    justifyContent: "center"
   },
   input: {
     color: "#fff",

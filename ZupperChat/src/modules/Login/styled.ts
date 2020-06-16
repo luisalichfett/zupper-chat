@@ -10,10 +10,15 @@ export const style = StyleSheet.create({
     height: "100%",
   },
   form: {
-    paddingBottom: 190,
     flex: 1,
     alignItems: "center",
     justifyContent: "flex-end",
+  },
+  loginButton: {
+    top: 560,
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "center",
   },
 });
 

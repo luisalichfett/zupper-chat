@@ -1,36 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { TextInput, View } from "react-native";
 import { style } from "./styled";
 
 interface Props {
-  handleInput: (event: string) => void;
-  handlePasswordFocus?: (event: any) => void;
   marginTop: number;
   placeHolder?: string;
   placeholderTextColor?: string;
   showPassword?: boolean;
-  paddingLeft?: number;
+  handlePassword: (event: string) => void;
+  handlePasswordSubmit?: (event: any) => void;
 }
 
 export const Password = ({
-  handleInput,
-  handlePasswordFocus,
   marginTop,
   placeHolder,
   placeholderTextColor,
   showPassword = true,
-  paddingLeft = 45
+  handlePassword,
+  handlePasswordSubmit
 }: Props) => {
   return (
-    <View style={{ ...style.inputBox, marginTop: marginTop, paddingLeft: paddingLeft }}>
+    <View style={{ ...style.inputBox, marginTop: marginTop }}>
       <TextInput
         secureTextEntry={showPassword}
         textContentType="password"
         placeholderTextColor={placeholderTextColor}
+        onSubmitEditing={handlePasswordSubmit}
+        onChangeText={handlePassword}
         placeholder={placeHolder}
         style={style.input}
-        onChangeText={handleInput}
-        onFocus={handlePasswordFocus}
       />
     </View>
   );
