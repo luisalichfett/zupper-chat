@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { TextInput, View } from "react-native";
-import { style } from "./styled";
+import React, { useState } from 'react';
+import { TextInput, View } from 'react-native';
+import { style } from './styled';
 
 interface Props {
   marginTop: number;
@@ -17,7 +17,7 @@ export const Password = ({
   placeholderTextColor,
   showPassword = true,
   handlePassword,
-  handlePasswordSubmit
+  handlePasswordSubmit,
 }: Props) => {
   return (
     <View style={{ ...style.inputBox, marginTop: marginTop }}>

@@ -1,6 +1,6 @@
-import React from "react";
-import { TextInput, View } from "react-native";
-import { style } from "./styled";
+import React from 'react';
+import { TextInput, View } from 'react-native';
+import { style } from './styled';
 
 interface Props {
   marginTop: number;
@@ -15,7 +15,7 @@ export const Input = ({
   placeHolder,
   placeholderTextColor,
   handleTextInput,
-  handleTextInputSubmit
+  handleTextInputSubmit,
 }: Props) => {
   return (
     <View style={{ ...style.inputBox, marginTop: marginTop }}>

@@ -1,11 +1,11 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 export const style = StyleSheet.create({
   container: {
-    position: "absolute",
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "row",
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
   },
 });
 

@@ -1,15 +1,27 @@
-import React, { ReactNode } from "react";
-import { Text } from "react-native";
+import React, { ReactNode } from 'react';
+import { Text } from 'react-native';
 
 interface Props {
   children: ReactNode;
   color: string;
-  fontWeight?: "normal" | "bold";
-  underlineText?: "underline" | "none"
+  fontWeight?: 'normal' | 'bold';
+  underlineText?: 'underline' | 'none';
 }
 
-export const InputText = ({ children, color, fontWeight = "normal", underlineText = "none" }: Props) => (
-  <Text style={{ color: color, textDecorationLine: underlineText,fontWeight: fontWeight, fontSize: 16 }}>
+export const InputText = ({
+  children,
+  color,
+  fontWeight = 'normal',
+  underlineText = 'none',
+}: Props) => (
+  <Text
+    style={{
+      color: color,
+      textDecorationLine: underlineText,
+      fontWeight: fontWeight,
+      fontSize: 16,
+    }}
+  >
     {children}
   </Text>
 );

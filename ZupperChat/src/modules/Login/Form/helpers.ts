@@ -1,5 +1,5 @@
-import map from "lodash/map";
-import includes from "lodash/includes";
+import map from 'lodash/map';
+import includes from 'lodash/includes';
 
 export const verifySubmit = (beforeSubmitData: any, exception?: string) => {
   map(Object.keys(beforeSubmitData), (key: string) => {
@@ -12,7 +12,7 @@ export const verifySubmit = (beforeSubmitData: any, exception?: string) => {
     Object.values(beforeSubmitData),
     undefined
   );
-  const responseEmptyString = includes(Object.values(beforeSubmitData), "");
+  const responseEmptyString = includes(Object.values(beforeSubmitData), '');
 
   return responseUndefined || responseEmptyString;
 };

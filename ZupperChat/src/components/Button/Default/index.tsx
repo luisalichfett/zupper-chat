@@ -1,7 +1,7 @@
-import React from "react";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import { View, Text } from "react-native";
-import { style } from "./styled";
+import React from 'react';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { View, Text } from 'react-native';
+import { style } from './styled';
 
 interface Props {
   text: string;
@@ -47,7 +47,7 @@ export const DefaultButton = ({
             ...style.disabled,
             width: width,
             height: height,
-            marginTop: -height
+            marginTop: -height,
           }}
         />
       )}

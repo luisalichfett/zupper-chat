@@ -1,6 +1,6 @@
-import React from "react";
-import { Image, ImageSourcePropType } from "react-native";
-import { style } from "./styled";
+import React from 'react';
+import { Image, ImageSourcePropType } from 'react-native';
+import { style } from './styled';
 
 interface Props {
   icon: ImageSourcePropType;

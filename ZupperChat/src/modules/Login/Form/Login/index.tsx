@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { View, KeyboardAvoidingView, Platform, Animated } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { useForm } from "react-hook-form";
-import { verifySubmit } from "../helpers";
-import Background from "../../../../components/Background";
-import Text from "../../../../components/Text";
-import Form from "../../../../components/Form";
-import Button from "../../../../components/Button";
-import { style } from "../../styled";
+import React, { useEffect, useState } from 'react';
+import { View, KeyboardAvoidingView, Platform, Animated } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useForm } from 'react-hook-form';
+import { verifySubmit } from '../helpers';
+import Background from '../../../../components/Background';
+import Text from '../../../../components/Text';
+import Form from '../../../../components/Form';
+import Button from '../../../../components/Button';
+import { style } from '../../styled';
 
 interface Props {
   paddingBottom: object;
@@ -24,8 +24,8 @@ export const LoginForm = ({
   const { register, setValue, handleSubmit, getValues } = useForm();
 
   useEffect(() => {
-    register({ name: "username" }, { required: true });
-    register({ name: "password" }, { required: true });
+    register({ name: 'username' }, { required: true });
+    register({ name: 'password' }, { required: true });
   }, [register]);
 
   const onSbumit = (data: object) => console.log({ data });
@@ -36,11 +36,11 @@ export const LoginForm = ({
   };
 
   return (
-    <View style={{ flex: 1, alignItems: "center" }}>
+    <View style={{ flex: 1, alignItems: 'center' }}>
       <Background.Animated />
       <KeyboardAvoidingView
         style={{ flex: 1 }}
-        behavior={Platform.OS === "ios" ? "padding" : undefined}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
         <SafeAreaView style={{ flex: 1 }}>
           <View style={style.form}>
@@ -50,14 +50,14 @@ export const LoginForm = ({
             <Form.Input
               placeHolder="Username"
               placeholderTextColor="#fff"
-              handleTextInput={(value) => setValue("username", value)}
+              handleTextInput={(value) => setValue('username', value)}
               handleTextInputSubmit={getBeforeSubmitValues}
               marginTop={160}
             />
             <Form.Password
               placeHolder="Password"
               placeholderTextColor="#fff"
-              handlePassword={(value) => setValue("password", value)}
+              handlePassword={(value) => setValue('password', value)}
               handlePasswordSubmit={getBeforeSubmitValues}
               marginTop={30}
             />
@@ -66,7 +66,7 @@ export const LoginForm = ({
           </View>
         </SafeAreaView>
       </KeyboardAvoidingView>
-      <View style={{ position: "absolute" }}>
+      <View style={{ position: 'absolute' }}>
         <Button.Default
           text="Confirm"
           handleOnPress={handleSubmit(onSbumit)}

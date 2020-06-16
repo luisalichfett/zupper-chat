@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
-import { View, Animated, Image } from "react-native";
-import { style } from "./styled";
+import React, { useEffect, useRef, useState } from 'react';
+import { View, Animated, Image } from 'react-native';
+import { style } from './styled';
 
-const BackgroundImage = require("../../../core/assets/img/background.png");
+const BackgroundImage = require('../../../core/assets/img/background.png');
 
 export const AnimatedBackground = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
