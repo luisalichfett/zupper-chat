@@ -16,7 +16,7 @@
         "node": true,
         "jasmine": true,
         "jest": true,
-        "es6": true
+        "es2020": true
     },
     "rules": {
         "prettier/prettier": [
