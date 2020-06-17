@@ -8,7 +8,7 @@ interface Props {
   underlineText?: 'underline' | 'none';
 }
 
-export const InputText = ({
+export const h1 = ({
   children,
   color,
   fontWeight = 'normal',
@@ -26,4 +26,4 @@ export const InputText = ({
   </Text>
 );
 
-export default InputText;
+export default h1;
