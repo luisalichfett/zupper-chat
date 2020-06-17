@@ -1,6 +1,6 @@
-import React from "react";
-import { Text, View } from "react-native";
-import style from "./styled";
+import React from 'react';
+import { Text, View } from 'react-native';
+import style from './styled';
 
 // interface Props {
 //   children: ReactNode;

@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { View, KeyboardAvoidingView, Platform, Animated } from 'react-native';
+import {
+  View,
+  KeyboardAvoidingView,
+  Platform,
+  Animated,
+  StyleProp,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useForm } from 'react-hook-form';
 import { verifySubmit } from '../helpers';
-import Background from '../../../../components/Background';
 import Text from '../../../../components/Text';
 import Form from '../../../../components/Form';
 import Button from '../../../../components/Button';
 import { style } from '../../styled';
+import { Login } from '../../interfaces/Login';
 
 interface Props {
-  paddingBottom: object;
-  title: object;
+  paddingBottom: StyleProp<Animated.Value>;
+  title: StyleProp<Animated.Value>;
   handleForgotPassword: (event: any) => void;
 }
 
@@ -21,23 +27,22 @@ export const LoginForm = ({
   handleForgotPassword,
 }: Props) => {
   const [isDisabled, setIsDisabled] = useState(true);
-  const { register, setValue, handleSubmit, getValues } = useForm();
+  const { register, setValue, handleSubmit, getValues } = useForm<Login>();
 
   useEffect(() => {
     register({ name: 'username' }, { required: true });
     register({ name: 'password' }, { required: true });
   }, [register]);
 
-  const onSbumit = (data: object) => console.log({ data });
+  const onSbumit = (data: Login) => console.log(data);
 
   const getBeforeSubmitValues = () => {
-    const { beforeSubmitData } = getValues();
+    const beforeSubmitData = getValues();
     setIsDisabled(verifySubmit(beforeSubmitData));
   };
 
   return (
     <View style={{ flex: 1, alignItems: 'center' }}>
-      <Background.Animated />
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}

@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { View, Animated, Image } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { Animated, Image } from 'react-native';
 import { style } from './styled';
 
 const BackgroundImage = require('../../../core/assets/img/background.png');
@@ -28,7 +28,7 @@ export const AnimatedBackground = () => {
 
   return (
     <Animated.View style={{ ...style.container, left: scrollX }}>
-      <Image source={BackgroundImage} style={style.image} />
+      <Image source={BackgroundImage} />
     </Animated.View>
   );
 };
