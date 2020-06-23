@@ -1,6 +1,5 @@
 import React from 'react';
 import { Image, ImageSourcePropType } from 'react-native';
-import { style } from './styled';
 
 interface Props {
   icon: ImageSourcePropType;
@@ -13,7 +12,7 @@ export const Icon = ({ icon, height = 50, width = 50 }: Props) => {
     <>
       <Image
         source={icon}
-        style={{ ...style.image, height: height, width: width }}
+        style={{resizeMode: "contain", height: height, width: width }}
       />
     </>
   );

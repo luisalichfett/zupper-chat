@@ -19,12 +19,14 @@ interface Props {
   paddingBottom: StyleProp<Animated.Value>;
   title: StyleProp<Animated.Value>;
   handleForgotPassword: (event: any) => void;
+  onSubmit: (data: Login) => void;
 }
 
 export const LoginForm = ({
   paddingBottom,
   title,
   handleForgotPassword,
+  onSubmit,
 }: Props) => {
   const [isDisabled, setIsDisabled] = useState(true);
   const { register, setValue, handleSubmit, getValues } = useForm<Login>();
@@ -33,8 +35,6 @@ export const LoginForm = ({
     register({ name: 'username' }, { required: true });
     register({ name: 'password' }, { required: true });
   }, [register]);
-
-  const onSbumit = (data: Login) => console.log(data);
 
   const getBeforeSubmitValues = () => {
     const beforeSubmitData = getValues();
@@ -74,7 +74,7 @@ export const LoginForm = ({
       <View style={{ position: 'absolute' }}>
         <Button.Default
           text="Confirm"
-          handleOnPress={handleSubmit(onSbumit)}
+          handleOnPress={handleSubmit(onSubmit)}
           marginTop={540}
           isDisabled={isDisabled}
         />

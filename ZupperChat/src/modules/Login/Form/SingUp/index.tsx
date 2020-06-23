@@ -19,12 +19,14 @@ interface Props {
   paddingBottom: StyleProp<Animated.Value>;
   title: StyleProp<Animated.Value>;
   handleLoginButton: (event: any) => void;
+  onSubmit: (data: SingUp) => void;
 }
 
 export const SingUpForm = ({
   paddingBottom,
   title,
   handleLoginButton,
+  onSubmit,
 }: Props) => {
   const [isDisabled, setIsDisabled] = useState(true);
   const { register, setValue, handleSubmit, getValues } = useForm<SingUp>();
@@ -36,8 +38,6 @@ export const SingUpForm = ({
     register({ name: 'photoUrl' });
     register({ name: 'password' }, { required: true });
   }, [register]);
-
-  const onSbumit = (data: SingUp) => console.log(data);
 
   const getBeforeSubmitValues = () => {
     const beforeSubmitData = getValues();
@@ -97,7 +97,7 @@ export const SingUpForm = ({
       <View style={{ position: 'absolute' }}>
         <Button.Default
           text="Confirm"
-          handleOnPress={handleSubmit(onSbumit)}
+          handleOnPress={handleSubmit(onSubmit)}
           marginTop={540}
           isDisabled={isDisabled}
         />

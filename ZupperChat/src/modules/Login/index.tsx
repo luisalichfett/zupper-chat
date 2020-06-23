@@ -5,10 +5,18 @@ import Icon from '../../components/Icon';
 import Button from '../../components/Button';
 import Form from './Form';
 import { style } from './styled';
+import { Login as LoginData } from './interfaces/Login';
+import { SingUp as SingUpData } from './interfaces/SingUp';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { Routes } from '../../routes';
 
 const Logo = require('../../core/assets/img/logo.png');
 
-export const Login = () => {
+interface Props {
+  navigation: StackNavigationProp<Routes, 'Login'>;
+}
+
+export const Login = ({ navigation }: Props) => {
   const [form, showForm] = useState('');
   const paddingBottom = useRef(new Animated.Value(180)).current;
   const title = useRef(new Animated.Value(1)).current;
@@ -23,10 +31,10 @@ export const Login = () => {
     setTimeout(
       () =>
         Animated.timing(fadeInSingUpButton, {
-          duration: 2000,
+          duration: 1000,
           toValue: 1,
         }).start(),
-      4000
+      3000
     );
   });
 
@@ -62,6 +70,10 @@ export const Login = () => {
     }).start();
   };
 
+  const handleFormSubmit = (data: LoginData | SingUpData) => {
+    console.log(data);
+    navigation.navigate('ChatList', { profileId: '1' });
+  };
   return (
     <>
       <Background.Animated />
@@ -72,6 +84,7 @@ export const Login = () => {
               paddingBottom={paddingBottom}
               title={title}
               handleLoginButton={() => showForm('login')}
+              onSubmit={(data) => handleFormSubmit(data)}
             />
           )}
           {form === 'login' && (
@@ -79,6 +92,7 @@ export const Login = () => {
               paddingBottom={paddingBottom}
               title={title}
               handleForgotPassword={() => showForm('password')}
+              onSubmit={(data) => handleFormSubmit(data)}
             />
           )}
         </>

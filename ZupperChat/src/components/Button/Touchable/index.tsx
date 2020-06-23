@@ -7,7 +7,7 @@ interface Props {
   handleOnPress: (event: any) => void;
 }
 
-export const TextButton = ({ children, handleOnPress }: Props) => {
+export const Touchable = ({ children, handleOnPress }: Props) => {
   return (
     <View style={{ position: 'relative' }}>
       <TouchableOpacity onPress={handleOnPress}>{children}</TouchableOpacity>
@@ -15,4 +15,4 @@ export const TextButton = ({ children, handleOnPress }: Props) => {
   );
 };
 
-export default TextButton;
+export default Touchable;
