@@ -103,11 +103,11 @@ export const SingUpForm = ({
         />
         <View style={style.loginButton}>
           <Text.h5 color="#fff">Already have an account? </Text.h5>
-          <Button.Text handleOnPress={handleLoginButton}>
+          <Button.Touchable handleOnPress={handleLoginButton}>
             <Text.h5 color="#fff" underlineText="underline">
               Login
             </Text.h5>
-          </Button.Text>
+          </Button.Touchable>
         </View>
       </View>
     </View>

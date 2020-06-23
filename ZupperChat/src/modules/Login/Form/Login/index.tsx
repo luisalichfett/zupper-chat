@@ -80,11 +80,11 @@ export const LoginForm = ({
         />
         <View style={style.loginButton}>
           <Text.h5 color="#fff">Forgot your password? </Text.h5>
-          <Button.Text handleOnPress={handleForgotPassword}>
+          <Button.Touchable handleOnPress={handleForgotPassword}>
             <Text.h5 color="#fff" underlineText="underline">
               New password
             </Text.h5>
-          </Button.Text>
+          </Button.Touchable>
         </View>
       </View>
     </View>
