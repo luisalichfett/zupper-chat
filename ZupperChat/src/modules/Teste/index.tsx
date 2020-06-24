@@ -7,6 +7,7 @@ import style from './styled';
 //   color: string;
 //   fontWeight?: 'normal' | 'bold';
 //   underlineText?: 'underline' | 'none';
+  style?: StyleProp<TextStyle>
 // }
 
 export const Teste = () => (

@@ -1,12 +1,12 @@
-import React from "react";
-import { View, Image } from "react-native";
-import Button from "../../../components/Button";
-import Bar from "../../../components/Bar";
-import { style } from "./styled";
-import User from "../../../core/assets/svg/user.svg";
-import NewMessage from "../../../core/assets/svg/write.svg";
+import React from 'react';
+import { View, Image } from 'react-native';
+import Button from '../../../components/Button';
+import Bar from '../../../components/Bar';
+import User from '../../../core/assets/svg/user.svg';
+import NewMessage from '../../../core/assets/svg/write.svg';
+import { style } from './styled';
 
-const LogoBar = require("../../../core/assets/img/logobar.png");
+const LogoBar = require('../../../core/assets/img/logobar.png');
 
 export const Topbar = () => (
   <Bar>
@@ -17,7 +17,7 @@ export const Topbar = () => (
       <Image style={style.logo} source={LogoBar} />
       <Button.Touchable
         style={style.newMessage}
-        handleOnPress={() => console.log("oi")}
+        handleOnPress={() => console.log('oi')}
       >
         <NewMessage width="45" height="45" fill="#ffffff" />
       </Button.Touchable>

@@ -12,7 +12,7 @@ export const Icon = ({ icon, height = 50, width = 50 }: Props) => {
     <>
       <Image
         source={icon}
-        style={{resizeMode: "contain", height: height, width: width }}
+        style={{ resizeMode: 'contain', height: height, width: width }}
       />
     </>
   );
