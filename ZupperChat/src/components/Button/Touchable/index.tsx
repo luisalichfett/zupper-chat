@@ -1,15 +1,16 @@
 import React, { ReactNode } from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { View } from 'react-native';
+import { View, StyleProp, ViewProps, ViewStyle } from 'react-native';
 
 interface Props {
   children: ReactNode;
   handleOnPress: (event: any) => void;
+  style?: StyleProp<ViewStyle>
 }
 
-export const Touchable = ({ children, handleOnPress }: Props) => {
+export const Touchable = ({ children, handleOnPress, style }: Props) => {
   return (
-    <View style={{ position: 'relative' }}>
+    <View style={style}>
       <TouchableOpacity onPress={handleOnPress}>{children}</TouchableOpacity>
     </View>
   );

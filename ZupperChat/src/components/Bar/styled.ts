@@ -4,7 +4,8 @@ export const style = StyleSheet.create({
   container: {
     position: "absolute",
     width: "100%",
-    height: 90,
+    top: -11.5,
+    height: 120,
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
@@ -14,7 +15,7 @@ export const style = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
     flexDirection: "row",
-    height: 90,
+    height: "100%",
     width: "100%",
     resizeMode: "contain",
   },
