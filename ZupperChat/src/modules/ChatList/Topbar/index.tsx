@@ -8,21 +8,26 @@ import { style } from './styled';
 
 const LogoBar = require('../../../core/assets/img/logobar.png');
 
-export const Topbar = () => (
-  <Bar>
-    <View style={style.container}>
-      <View style={style.userEmptyPhoto}>
-        <User width="50" height="50" fill="#ffffff" />
+interface Props {
+  handleOnPress: (event: any) => void;
+}
+export const Topbar = ({ handleOnPress }: Props) => {
+  return (
+    <Bar>
+      <View style={style.container}>
+        <View style={style.userEmptyPhoto}>
+          <User width="50" height="50" fill="#ffffff" />
+        </View>
+        <Image style={style.logo} source={LogoBar} />
+        <Button.Touchable
+          style={style.newMessage}
+          handleOnPress={handleOnPress}
+        >
+          <NewMessage width="45" height="45" fill="#ffffff" />
+        </Button.Touchable>
       </View>
-      <Image style={style.logo} source={LogoBar} />
-      <Button.Touchable
-        style={style.newMessage}
-        handleOnPress={() => console.log('oi')}
-      >
-        <NewMessage width="45" height="45" fill="#ffffff" />
-      </Button.Touchable>
-    </View>
-  </Bar>
-);
+    </Bar>
+  );
+};
 
 export default Topbar;
