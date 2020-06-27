@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Animated, View, Image, StyleProp } from 'react-native';
-import map from 'lodash/map';
+import { FlatList } from 'react-native-gesture-handler';
 import Text from '../../../components/Text';
 import { fakechats } from './fakechats';
 import { style } from './styled';
-import { FlatList } from 'react-native-gesture-handler';
 
 interface Message {
   id: string;
@@ -18,11 +17,6 @@ interface User {
   photoUrl: string;
   email: string;
   messages: Message[];
-}
-interface Props {
-  fadeView: StyleProp<Animated.Value>;
-  display: StyleProp<Animated.Value>;
-  handleCancelButton: (event: any) => void;
 }
 
 export const ChatRooms = () => {
