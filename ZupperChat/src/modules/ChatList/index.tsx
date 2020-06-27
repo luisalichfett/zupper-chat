@@ -1,23 +1,41 @@
-import React, { useRef } from 'react';
-import Topbar from './Topbar';
+import React, { useRef, useState } from 'react';
 import { View, Animated } from 'react-native';
-import NewMessage from './Topbar/NewMessage';
+import NewMessage from './NewMessage';
+import Topbar from './Topbar';
+import ChatRooms from './ChatRooms';
 
 export const ChatList = () => {
-  const displayUsersList = useRef(new Animated.Value(700)).current;
+  const displayUsersList = useRef(new Animated.Value(725)).current;
+  const unallowedOutsideClick = useRef(new Animated.Value(0)).current;
+  const [newMessageMode, setNewMessageMode] = useState(false);
 
   const handleNewMessage = () => {
-    Animated.timing(displayUsersList, {
-      toValue: 0,
-      duration: 1500,
-    }).start();
+    setNewMessageMode(true);
+    Animated.sequence([
+      Animated.timing(unallowedOutsideClick, {
+        toValue: 0.8,
+        duration: 200,
+      }),
+      Animated.timing(displayUsersList, {
+        toValue: -57,
+        duration: 850,
+      }),
+    ]).start();
   };
 
-  const handleCancelButton = () =>
-    Animated.timing(displayUsersList, {
-      toValue: 700,
-      duration: 1500,
-    }).start();
+  const handleCancelButton = () => {
+    Animated.sequence([
+      Animated.timing(displayUsersList, {
+        toValue: 725,
+        duration: 850,
+      }),
+      Animated.timing(unallowedOutsideClick, {
+        toValue: 0,
+        duration: 200,
+      }),
+    ]).start();
+    setTimeout(() => setNewMessageMode(false), 1750);
+  };
 
   return (
     <>
@@ -30,11 +48,15 @@ export const ChatList = () => {
           backgroundColor: '#000',
         }}
       />
-      <NewMessage
-        display={displayUsersList}
-        handleCancelButton={() => handleCancelButton()}
-      />
       <Topbar handleOnPress={() => handleNewMessage()} />
+      <ChatRooms />
+      {newMessageMode && (
+        <NewMessage
+          display={displayUsersList}
+          fadeView={unallowedOutsideClick}
+          handleCancelButton={() => handleCancelButton()}
+        />
+      )}
     </>
   );
 };

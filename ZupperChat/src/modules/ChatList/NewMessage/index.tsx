@@ -1,11 +1,11 @@
 import React from 'react';
 import { Animated, SectionList, View, Image, StyleProp } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Button from '../../../../components/Button';
-import Text from '../../../../components/Text';
+import Button from '../../../components/Button';
+import Form from '../../../components/Form';
+import Text from '../../../components/Text';
 import { fakelist } from './fakelist';
 import { style } from './styled';
-import Form from '../../../../components/Form';
 
 interface User {
   id: string;
@@ -15,11 +15,16 @@ interface User {
   email: string;
 }
 interface Props {
+  fadeView: StyleProp<Animated.Value>;
   display: StyleProp<Animated.Value>;
   handleCancelButton: (event: any) => void;
 }
 
-export const NewMessage = ({ display, handleCancelButton }: Props) => {
+export const NewMessage = ({
+  display,
+  fadeView,
+  handleCancelButton,
+}: Props) => {
   const renderUser = (item: User) => (
     <View style={style.userContainer}>
       <Image style={style.userPhoto} source={{ uri: item.photoUrl }} />
@@ -36,7 +41,17 @@ export const NewMessage = ({ display, handleCancelButton }: Props) => {
 
   return (
     <>
-      <Animated.View style={{ marginTop: display, height: 700 }}>
+      <Animated.View
+        style={{
+          position: 'absolute',
+          flex: 1,
+          backgroundColor: '#123456',
+          opacity: fadeView,
+          height: '100%',
+          width: '100%',
+        }}
+      />
+      <Animated.View style={{ marginTop: display, height: 725 }}>
         <SafeAreaView style={style.container}>
           <View style={{ marginBottom: 0, flex: 1, flexDirection: 'column' }}>
             <View style={style.containerTitle}>

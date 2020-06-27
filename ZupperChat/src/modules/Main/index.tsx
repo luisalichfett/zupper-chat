@@ -11,7 +11,7 @@ const Main = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Login"
+        initialRouteName="ChatList"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="Login" component={Login} />
