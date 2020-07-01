@@ -2,8 +2,8 @@ import "dotenv/config";
 
 export default {
   expo: {
-    name: "zupperchat",
-    slug: "zupperchat",
+    name: "ZuppersChat",
+    slug: "ZuppersChat",
     version: "1.0.0",
     orientation: "portrait",
     icon: "./src/core/assets/img/icon.png",
@@ -19,12 +19,13 @@ export default {
     ios: {
       supportsTablet: true,
       infoPlist: {
-        NSAppTransportSecurity : {
-          NSAllowsArbitraryLoads : true,
-          NSAllowsArbitraryLoadsForMedia: true, 
-          NSAllowsArbitraryLoadsInWebContent: true, 
-          NSExceptionAllowsInsecureHTTPLoads: true
-        }
+        NSAppTransportSecurity: {
+          NSAllowsArbitraryLoads: true,
+          NSAllowsArbitraryLoadsForMedia: true,
+          NSAllowsArbitraryLoadsInWebContent: true,
+          NSExceptionAllowsInsecureHTTPLoads: true,
+        },
+      },
     },
     web: {
       favicon: "./assets/favicon.png",
@@ -46,7 +47,7 @@ export default {
       ],
     },
     extra: {
-      API_URL: "http://localhost:8080",
+      API_URL: "http://192.168.1.118:8080",
       NODE_ENV: process.env.NODE_ENV,
     },
   },
