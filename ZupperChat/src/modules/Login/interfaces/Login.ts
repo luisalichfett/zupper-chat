@@ -1,3 +1,3 @@
-import { Auth } from "./Auth";
+import { Auth } from './Auth';
 
-export interface Login extends Auth {}
+export type Login = Auth;

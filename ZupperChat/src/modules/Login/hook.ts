@@ -1,10 +1,14 @@
-import { useCallback, useEffect } from "react";
-import { UseFetch } from "../../core/providers/base/hook";
-import { Login } from "./interfaces/Login";
-import { SingUp } from "./interfaces/SingUp";
-import { login, singUp } from "../../core/providers/auth";
+import { useCallback, useEffect } from 'react';
+import { UseFetch } from '../../core/providers/base/hook';
+import { Login } from './interfaces/Login';
+import { SingUp } from './interfaces/SingUp';
+import { login, singUp } from '../../core/providers/auth';
 
-export const useLogin = (): [Login | undefined, boolean, Function] => {
+export const useLogin = (): [
+  Login | undefined,
+  boolean,
+  (args: any) => void
+] => {
   const [loginData, postLogin] = UseFetch<Login>(login);
   const { response, error, loading } = loginData;
 
@@ -24,7 +28,11 @@ export const useLogin = (): [Login | undefined, boolean, Function] => {
   return [response, loading, loadLogin];
 };
 
-export const useSingUp = (): [SingUp | undefined, boolean, Function] => {
+export const useSingUp = (): [
+  SingUp | undefined,
+  boolean,
+  (args: any) => void
+] => {
   const [singUpData, postSingUp] = UseFetch<SingUp>(singUp);
   const { response, error, loading } = singUpData;
 

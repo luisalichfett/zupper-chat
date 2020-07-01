@@ -13,17 +13,17 @@ export const AnimatedBackground = () => {
         Animated.timing(scrollX, {
           toValue: -1040,
           duration: 10000,
-          useNativeDriver: false
+          useNativeDriver: false,
         }),
         Animated.timing(scrollX, {
           toValue: 665,
           duration: 20000,
-          useNativeDriver: false
+          useNativeDriver: false,
         }),
         Animated.timing(scrollX, {
           toValue: 0,
           duration: 10000,
-          useNativeDriver: false
+          useNativeDriver: false,
         }),
       ])
     ).start();
