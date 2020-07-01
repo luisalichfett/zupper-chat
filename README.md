@@ -44,7 +44,7 @@ API_URL=http://000.000.0.000:8080
 
 Also place the ip address in the host key of the Hapi server on the index archive of your stub folder:
 
-**/stub/index.js**
+**stub/index.js**
 ```javascript
 //...
 
@@ -77,7 +77,7 @@ const server = Hapi.server({
 
 Finally place the ip address in the API_URL key in the extra configuration of the app.config archive:
 
-**/app.config.js**
+**app.config.js**
 ```javascript
 //...
 
