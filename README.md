@@ -24,7 +24,7 @@ Afterward, open your application folder in terminal, then type the comand "yarn"
 
 Finally, run one of the commands in the section bellow according to what you want to evaluate, and then scan the QR code that will show up on your terminal, if you're using a device, or copy the link to your simulator:
 
-[!terminal](/Images/README/terminal.jpeg)
+![terminal](/Images/README/terminal.jpeg)
 
 
 # Commands:
