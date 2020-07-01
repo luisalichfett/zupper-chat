@@ -41,3 +41,23 @@ API_URL=http://YOUR_IP_ADDRESS:8080
 NODE_ENV=mock
 API_URL=http://000.000.0.000:8080
 ```
+
+Also place the ip address in the host key of the Hapi server on the index archive of your stub folder
+
+**/stub/index.js**
+```javascript
+//...
+
+const server = Hapi.server({
+  host: "000.000.0.000",
+  port: 8080,
+  routes: {
+    cors: {
+      origin: ["*"],
+      headers: ["Content-Type"],
+    },
+  },
+});
+
+//...
+```
