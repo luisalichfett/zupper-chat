@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextInput, View } from 'react-native';
-import SearchIcon from '../../../core/assets/svg/search.svg';
+import SearchIcon from '../../../../core/assets/svg/search.svg';
 import { style } from './styled';
 
 interface Props {

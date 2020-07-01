@@ -14,8 +14,8 @@ interface Props {
 
 export const DefaultButton = ({
   text,
-  height = 60,
-  width = 250,
+  height = 55,
+  width = 230,
   marginTop,
   handleOnPress,
   isDisabled = false,

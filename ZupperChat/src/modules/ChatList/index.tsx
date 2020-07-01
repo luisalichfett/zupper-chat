@@ -15,10 +15,12 @@ export const ChatList = () => {
       Animated.timing(unallowedOutsideClick, {
         toValue: 0.8,
         duration: 200,
+        useNativeDriver: false
       }),
       Animated.timing(displayUsersList, {
         toValue: -57,
         duration: 850,
+        useNativeDriver: false
       }),
     ]).start();
   };
@@ -28,10 +30,12 @@ export const ChatList = () => {
       Animated.timing(displayUsersList, {
         toValue: 725,
         duration: 850,
+        useNativeDriver: false
       }),
       Animated.timing(unallowedOutsideClick, {
         toValue: 0,
         duration: 200,
+        useNativeDriver: false
       }),
     ]).start();
     setTimeout(() => setNewMessageMode(false), 1750);

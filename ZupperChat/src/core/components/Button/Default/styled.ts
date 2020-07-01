@@ -32,7 +32,7 @@ export const style = StyleSheet.create({
     zIndex: -1,
   },
   text: {
-    fontSize: 30,
+    fontSize: 20,
     color: '#fff',
   },
 });

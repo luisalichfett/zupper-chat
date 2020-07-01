@@ -9,9 +9,9 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useForm } from 'react-hook-form';
 import { verifySubmit } from '../helpers';
-import Text from '../../../../components/Text';
-import Form from '../../../../components/Form';
-import Button from '../../../../components/Button';
+import Text from '../../../../core/components/Text';
+import Form from '../../../../core/components/Form';
+import Button from '../../../../core/components/Button';
 import { style } from '../../styled';
 import { SingUp } from '../../interfaces/SingUp';
 
@@ -60,35 +60,35 @@ export const SingUpForm = ({
               handleTextInput={(value) => setValue('name', value)}
               handleTextInputSubmit={getBeforeSubmitValues}
               placeholderTextColor="#fff"
-              marginTop={40}
+              marginTop={50}
             />
             <Form.Input
               placeHolder="Username"
               handleTextInput={(value) => setValue('username', value)}
               handleTextInputSubmit={getBeforeSubmitValues}
               placeholderTextColor="#fff"
-              marginTop={30}
+              marginTop={40}
             />
             <Form.Input
               placeHolder="Email"
               handleTextInput={(value) => setValue('email', value)}
               handleTextInputSubmit={getBeforeSubmitValues}
               placeholderTextColor="#fff"
-              marginTop={30}
+              marginTop={40}
             />
             <Form.Input
               placeHolder="Photo URL"
               handleTextInput={(value) => setValue('photoUrl', value)}
               handleTextInputSubmit={getBeforeSubmitValues}
               placeholderTextColor="#fff"
-              marginTop={30}
+              marginTop={40}
             />
             <Form.Password
               placeHolder="Password"
               handlePassword={(value) => setValue('password', value)}
               handlePasswordSubmit={getBeforeSubmitValues}
               placeholderTextColor="#fff"
-              marginTop={30}
+              marginTop={40}
             />
             <Animated.View style={{ height: paddingBottom }} />
           </View>

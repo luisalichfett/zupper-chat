@@ -17,7 +17,6 @@ export const style = StyleSheet.create({
     flexDirection: 'row',
     height: '100%',
     width: '100%',
-    resizeMode: 'contain',
   },
   footer: {
     position: 'absolute',
@@ -27,7 +26,6 @@ export const style = StyleSheet.create({
     flexDirection: 'row',
     height: 70,
     width: '100%',
-    resizeMode: 'contain',
     transform: [{ rotate: '180deg' }],
   },
   children: {

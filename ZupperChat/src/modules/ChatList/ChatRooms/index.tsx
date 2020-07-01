@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import { Animated, View, Image, StyleProp } from 'react-native';
+import React from 'react';
+import { View, Image } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
-import Text from '../../../components/Text';
+import Text from '../../../core/components/Text';
 import { fakechats } from './fakechats';
 import { style } from './styled';
 

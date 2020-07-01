@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import Button from '../../../components/Button';
-import Bar from '../../../components/Bar';
+import Button from '../../../core/components/Button';
+import Bar from '../../../core/components/Bar';
 import User from '../../../core/assets/svg/user.svg';
 import NewMessage from '../../../core/assets/svg/write.svg';
 import { style } from './styled';

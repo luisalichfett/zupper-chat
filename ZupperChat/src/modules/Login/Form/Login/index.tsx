@@ -9,9 +9,9 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useForm } from 'react-hook-form';
 import { verifySubmit } from '../helpers';
-import Text from '../../../../components/Text';
-import Form from '../../../../components/Form';
-import Button from '../../../../components/Button';
+import Text from '../../../../core/components/Text';
+import Form from '../../../../core/components/Form';
+import Button from '../../../../core/components/Button';
 import { style } from '../../styled';
 import { Login } from '../../interfaces/Login';
 
@@ -64,7 +64,7 @@ export const LoginForm = ({
               placeholderTextColor="#fff"
               handlePassword={(value) => setValue('password', value)}
               handlePasswordSubmit={getBeforeSubmitValues}
-              marginTop={30}
+              marginTop={40}
             />
             <Animated.View style={{ height: paddingBottom }} />
             <View style={{ height: 100 }} />

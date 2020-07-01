@@ -1,9 +1,9 @@
 import React from 'react';
 import { Animated, SectionList, View, Image, StyleProp } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Button from '../../../components/Button';
-import Form from '../../../components/Form';
-import Text from '../../../components/Text';
+import Button from '../../../core/components/Button';
+import Form from '../../../core/components/Form';
+import Text from '../../../core/components/Text';
 import { fakelist } from './fakelist';
 import { style } from './styled';
 
