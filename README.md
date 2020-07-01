@@ -121,4 +121,15 @@ Finally place the ip address in the API_URL key in the extra configuration of th
 
 # Contributors:
 
-* [@luisalichfett](https://github.com/luisalichfett)
+* [@luisalichfett](https://github.com/luisaborgeszup)
+* [@alineguimaraes](https://github.com/alinepaulazup)
+* [@risonaldomoura](https://github.com/antoniomourazup)
+* [@stefanielibarino](https://github.com/stefanielibarinozup)
+* [@victorsantos](https://github.com/victorsantoszup)
+* [@alineguimaraes](https://github.com/alinepaulazup)
+* [@leticiagondo](https://github.com/leticiagondozup)
+* [@gessicasousa](https://github.com/gessicasousazup)
+* [@brauliocarvalho](https://github.com/brauliocarvalhozup)
+
+
+
