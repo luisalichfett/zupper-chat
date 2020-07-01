@@ -1,5 +1,9 @@
 # Zupper's Chat
 
+### Note:
+
+Unfortunately, the backend of the application isn't ready yet, but you can have an idea of how it's supposed to work by running the mock command, explained in the "Commands" section!!
+
 # Configuration:
 
 In order to work properly, you need to first open your application folder in terminal, then type the comand "yarn" in order to install all the needed dependencies:
@@ -99,3 +103,7 @@ Finally place the ip address in the API_URL key in the extra configuration of th
   },
 };
 ```
+
+# Contributors:
+
+* [@luisalichfett](https://github.com/luisalichfett)
