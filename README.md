@@ -7,8 +7,5 @@ In order to work properly, you need to first open your application folder in ter
 ```
 ~$ cd zupper-chat/ZupperChat
 
+~/zupper-chat/ZupperChat yarn
 ```
-
-![Entering Application Folder](/Images/README/enteringApp.png)
-
-![Yarn Comand](/Images/README/yarnComand.png)
