@@ -6,7 +6,15 @@ Unfortunately, the backend of the application isn't ready yet, but you can have 
 
 # Configuration:
 
-In order to work properly, you need to first open your application folder in terminal, then type the comand "yarn" in order to install all the needed dependencies:
+In order to work properly, first intall globally in your machine the [Expo](https://docs.expo.io/) framework, by running the following command: 
+
+```
+~$ npm install --global expo-cli
+```
+
+Then, being eiter a mobile device or a mobile simulator, install the [Expo](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=pt_BR) app in it.
+
+Afterward, open your application folder in terminal, then type the comand "yarn" in order to install all the needed dependencies:
 
 ```
 ~$ cd zupper-chat/ZupperChat
@@ -14,7 +22,18 @@ In order to work properly, you need to first open your application folder in ter
 ~/zupper-chat/ZupperChat$ yarn
 ```
 
+Finally, run one of the commands in the section bellow according to what you want to evaluate, and then scan the QR code that will show up on your terminal, if you're using a device, or copy the link to your simulator:
+
+[!terminal](/Images/README/terminal.jpeg)
+
+
 # Commands:
+
+First, intall globally in your machine the [Expo](https://docs.expo.io/) framework, by running the following command: 
+
+```
+~$ 
+```
 
 In order to start the application in development mode, simply run "expo start",
 since it's defaulted to this enviroment:
@@ -22,6 +41,8 @@ since it's defaulted to this enviroment:
 ```
 ~/zupper-chat/ZupperChat$ expo start
 ```
+
+After running the command, 
 
 If you want to run in mock mode, run the following command:
 
