@@ -32,7 +32,7 @@ Finally, run one of the commands in the section bellow according to what you wan
 First, intall globally in your machine the [Expo](https://docs.expo.io/) framework, by running the following command: 
 
 ```
-~$ 
+~$ npm install --global expo-cli
 ```
 
 In order to start the application in development mode, simply run "expo start",
