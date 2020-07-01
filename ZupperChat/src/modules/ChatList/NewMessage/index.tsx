@@ -1,19 +1,20 @@
-import React from 'react';
-import { Animated, SectionList, View, Image, StyleProp } from 'react-native';
+import React, { useEffect } from 'react';
+import {
+  Animated,
+  SectionList,
+  View,
+  Image,
+  StyleProp,
+  SectionListData,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Button from '../../../core/components/Button';
 import Form from '../../../core/components/Form';
 import Text from '../../../core/components/Text';
-import { fakelist } from './fakelist';
 import { style } from './styled';
+import useUsersList from '../hooks';
+import { User } from '../interfaces/User';
 
-interface User {
-  id: string;
-  name: string;
-  user: string;
-  photoUrl: string;
-  email: string;
-}
 interface Props {
   fadeView: StyleProp<Animated.Value>;
   display: StyleProp<Animated.Value>;
@@ -25,7 +26,13 @@ export const NewMessage = ({
   fadeView,
   handleCancelButton,
 }: Props) => {
-  const renderUser = (item: User) => (
+  const [usersList, , loadUsersList] = useUsersList();
+
+  useEffect(() => {
+    loadUsersList();
+  }, [loadUsersList]);
+
+  const renderUser = (item: SectionListData<User>) => (
     <View style={style.userContainer}>
       <Image style={style.userPhoto} source={{ uri: item.photoUrl }} />
       <View style={style.userInfo}>
@@ -67,16 +74,17 @@ export const NewMessage = ({
             <View style={style.searchField}>
               <Form.Search handleTextInput={(text) => console.log(text)} />
             </View>
-            <SectionList
-              sections={fakelist}
-              keyExtractor={(item) => item.id}
-              renderItem={({ item }) => renderUser(item)}
-              renderSectionHeader={({ section: { title } }) => (
-                <View style={style.sectionTitle}>
-                  <Text.h4 color="#fff">{title}</Text.h4>
-                </View>
-              )}
-            />
+            {usersList && (
+              <SectionList
+                sections={usersList.content}
+                renderItem={({ item }) => renderUser(item)}
+                renderSectionHeader={({ section: { title } }) => (
+                  <View style={style.sectionTitle}>
+                    <Text.h4 color="#fff">{title}</Text.h4>
+                  </View>
+                )}
+              />
+            )}
           </View>
         </SafeAreaView>
       </Animated.View>

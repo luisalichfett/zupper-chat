@@ -1,26 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Image } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import Text from '../../../core/components/Text';
-import { fakechats } from './fakechats';
 import { style } from './styled';
-
-interface Message {
-  id: string;
-  text: string;
-}
-
-interface User {
-  id: string;
-  name: string;
-  user: string;
-  photoUrl: string;
-  email: string;
-  messages: Message[];
-}
+import { useUsersChat } from '../hooks';
+import { UserChatItem } from '../interfaces/UserChat';
 
 export const ChatRooms = () => {
-  const renderUser = (item: User) => (
+  const [usersChat, , loadUsersChat] = useUsersChat();
+
+  useEffect(() => {
+    loadUsersChat();
+  }, [loadUsersChat]);
+
+  const renderUser = (item: UserChatItem) => (
     <View style={style.userContainer}>
       <Image style={style.userPhoto} source={{ uri: item.photoUrl }} />
       <View style={style.userInfo}>
@@ -51,7 +44,7 @@ export const ChatRooms = () => {
           borderTopColor: '99cdb8',
           borderTopWidth: 1,
         }}
-        data={fakechats}
+        data={usersChat?.content}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => renderUser(item)}
       />
